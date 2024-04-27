@@ -5,7 +5,7 @@
   width: 40%;
   min-height: 300px;
   gap: 20px;
-  background-color: #407ef1;
+  background-color: #729dec;
   box-shadow: 0px 5px 10px #3e5d97;
   color: #ffffff;
   font-size: 20px;
@@ -20,6 +20,8 @@
 
 input {
   padding: 7px;
+  border: 0;
+  box-shadow: 0 1px 2px #0848a8;
 }
 
 .btn-container {
@@ -39,7 +41,7 @@ input {
   box-shadow: 0 5px 5px #2553aa;
 }
 
-.btn-container button:hover{
+.btn-container button:hover {
   background-color: #356acc;
   color: #ffffff;
 }
