@@ -15,8 +15,14 @@ export class UserLoginComponent {
     password: '',
   });
 
-  submitForm() {
-    console.log(this.loginForm.value);
+  async submitForm() {
+    await fetch('http://localhost:8090/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.loginForm.value),
+    });
     this.loginForm.patchValue({
       username: '',
       password: '',
