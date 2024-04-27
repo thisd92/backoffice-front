@@ -1,24 +1,48 @@
 <form class="form-container" [formGroup]="signupForm" (ngSubmit)="submitForm()">
-    <div class="title-container">
-      <h2>{{ title }}</h2>
-    </div>
-    <div class="form-control">
-      <label for="username">Username</label>
-      <input type="text" id="username" formControlName="username" />
-    </div>
-  
-    <div class="form-control">
-      <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password" />
-    </div>
+  <div class="title-container">
+    <h2>{{ title }}</h2>
+  </div>
 
-    <div class="form-control">
-      <label for="password">Confirm Password</label>
-      <input type="password" id="confirmPassword" formControlName="confirmPassword" />
-    </div>
-  
-    <div class="btn-container">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-  
+  <div class="form-control">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" required />
+  </div>
+
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" required />
+  </div>
+
+  <div class="form-control">
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username" required />
+  </div>
+
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" required />
+  </div>
+
+  <div class="form-control">
+    <label for="password">Confirm Password</label>
+    <input
+      type="password"
+      id="confirmPassword"
+      formControlName="confirmPassword"
+      required
+    />
+  </div>
+
+  <input
+    type="text"
+    id="userRole"
+    formControlName="userRole"
+    value="user"
+    style="display: none"
+    readonly
+  />
+
+  <div class="btn-container">
+    <button type="submit">Submit</button>
+  </div>
+</form>
