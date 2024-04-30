@@ -15,24 +15,36 @@ export class SignupComponent {
     email: '',
     username: '',
     password: '',
-    userRole: 'user',
+    confirmPassword: '',
   });
 
   async submitForm() {
-    await fetch('http://localhost:8090/user/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(this.signupForm.value),
-    });
-    this.signupForm.patchValue({
-      name: '',
-      email: '',
-      username: '',
-      password: '',
-      userRole: 'user'
-    });
+    const user = {
+      name: this.signupForm.value.name,
+      email: this.signupForm.value.email,
+      username: this.signupForm.value.username,
+      password: this.signupForm.value.password,
+      role: 'USER',
+    };
+    try {
+      const response = await fetch('http://localhost:8090/user/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+      this.signupForm.patchValue({
+        name: '',
+        email: '',
+        username: '',
+        password: '',
+        confirmPassword: '',
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   constructor(private formBuilder: FormBuilder) {}
