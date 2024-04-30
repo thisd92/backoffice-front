@@ -16,17 +16,22 @@ export class UserLoginComponent {
   });
 
   async submitForm() {
-    await fetch('http://localhost:8090/auth/signin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(this.loginForm.value),
-    });
-    this.loginForm.patchValue({
-      username: '',
-      password: '',
-    });
+    try {
+      const response = await fetch('http://localhost:8090/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.loginForm.value),
+      });
+      this.loginForm.patchValue({
+        username: '',
+        password: '',
+      });
+      console.log(response)
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   constructor(private formBuilder: FormBuilder) {}
