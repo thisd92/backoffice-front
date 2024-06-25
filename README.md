@@ -1,27 +1,110 @@
-# BackofficeFront
+# Backoffice Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+Esse é um projeto Angular,  gerado com Angular CLI 17.3.4. Utiliza Sass e TypeScript, e atualmente está em desenvolvimento. A intenção é de ser o frontend para interagir com o backend do repositório [`prodMngmtBackend`](https://github.com/thisd92/prodMngmtBackend).
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Login**: Permite que os usuários façam login no sistema.
+- **Signup**: Permite que novos usuários se registrem no sistema.
 
-## Code scaffolding
+## Instalação e Execução
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Pré-requisitos
 
-## Build
+Tenha certeza de ter instalado Node.js e AngularCLI em sua máquina.
+- Node.js: [Download and install Node.js](https://nodejs.org/)
+- Angular CLI: Install Angular CLI globally using npm:
+```bash
+  npm install -g @angular/cli
+```
+### Instalação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone o repositório:
 
-## Running unit tests
+    ```bash
+    git clone https://github.com/seu-usuario/backoffice-front.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navegue até o diretório do projeto:
 
-## Running end-to-end tests
+    ```bash
+    cd backoffice-front
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Instale as dependências:
 
-## Further help
+    ```bash
+    npm install
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Execução:
+
+    ```bash
+    ng serve
+    ```
+
+5. Abra o navegador e acesse `http://localhost:4200`.
+
+## Configuração
+
+Certifique-se de que o backend (repositório `prodMngmtBackend`) esteja em execução e devidamente configurado para que este frontend possa consumir suas APIs.
+
+## Estrutura de Diretórios
+
+```plaintext
+backoffice-front/
+│
+├── src/
+│   ├── app/
+│   │   ├── features/
+│   │   │   ├── login/
+│   │   │   │   ├── login.component.html
+│   │   │   │   ├── login.component.scss
+│   │   │   │   ├── login.component.ts
+│   │   │   │   └── login.module.ts
+│   │   │   │
+│   │   │   ├── signup/
+│   │   │   │   ├── signup.component.html
+│   │   │   │   ├── signup.component.scss
+│   │   │   │   ├── signup.component.ts
+│   │   │   │   └── signup.module.ts
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── login/
+│   │   │   │   ├── login.component.html
+│   │   │   │   ├── login.component.scss
+│   │   │   │   ├── login.component.ts
+│   │   │   │   └── login.module.ts
+│   │   │   │
+│   │   │   ├── user-register/
+│   │   │   │   ├── user-register.component.html
+│   │   │   │   ├── user-register.component.scss
+│   │   │   │   ├── user-register.component.ts
+│   │   │   │   └── user-register.module.ts
+│   │   │
+│   │   └── app.module.ts
+│   │
+│   ├── assets/
+│   │
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss
+│
+├── angular.json
+├── package.json
+├── README.md
+└── tsconfig.json
+```
+
+## Contribuição
+
+Se você deseja contribuir com este projeto, por favor, siga as etapas abaixo:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature (git checkout -b feature/MinhaFeature).
+3. Comite suas alterações (git commit -m 'Adiciona minha feature').
+4. Faça um push para a branch (git push origin feature/MinhaFeature).
+5. Abra um Pull Request.
+
+## Licença
+Este projeto está licenciado sob a MIT License.
